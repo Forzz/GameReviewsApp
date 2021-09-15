@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_centerInParent="true"
-    tools:context=".ReviewsFragment">
+    tools:context=".Presentation.View.ReviewsFragment">
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="98dp"
-        android:layout_height="24dp"
-        android:text="ReviewsFragment"
+        android:layout_width="257dp"
+        android:layout_height="20dp"
         android:gravity="center"
+        android:text="ReviewsFragment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

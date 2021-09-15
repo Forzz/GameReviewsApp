@@ -5,13 +5,12 @@
     android:layout_height="match_parent"
     android:layout_centerInParent="true"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".GamesListFragment">
+    tools:context=".Presentation.View.GamesListFragment">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="GamesFragment"
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="372dp"
+        android:layout_height="675dp"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

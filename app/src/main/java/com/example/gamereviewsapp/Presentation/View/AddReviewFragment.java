@@ -1,4 +1,4 @@
-package com.example.gamereviewsapp;
+package com.example.gamereviewsapp.Presentation.View;
 
 import android.os.Bundle;
 
@@ -8,12 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class ReviewsFragment extends Fragment {
+import com.example.gamereviewsapp.R;
+
+public class AddReviewFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_reviews, container, false);
+        return inflater.inflate(R.layout.fragment_add_review, container, false);
     }
 }
