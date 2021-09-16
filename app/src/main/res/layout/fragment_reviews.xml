@@ -7,13 +7,11 @@
     android:layout_centerInParent="true"
     tools:context=".Presentation.View.ReviewsFragment">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="257dp"
-        android:layout_height="20dp"
-        android:gravity="center"
-        android:text="ReviewsFragment"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reviewPreviewsRecycler"
+        android:layout_width="372dp"
+        android:layout_height="675dp"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

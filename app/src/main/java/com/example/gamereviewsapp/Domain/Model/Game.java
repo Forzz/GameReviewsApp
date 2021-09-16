@@ -5,8 +5,8 @@ public class Game {
     final private int id;
     private String title;
     private String description;
-    private int criticsScore;
-    private double usersScore;
+    int criticsScore;
+    double usersScore;
 
     public Game(int id, String title, String description, int criticsScore, double usersScore) {
         this.id = id;
