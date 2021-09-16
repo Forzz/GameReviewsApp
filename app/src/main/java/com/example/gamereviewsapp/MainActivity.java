@@ -23,12 +23,4 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
     }
 
-    public void hideBottomNavigationVisibility() {
-//        bottomNavigationView.setVisibility(View.GONE);
-    }
-
-    public void showBottomNavigationVisibility() {
-//        bottomNavigationView.setVisibility(View.VISIBLE);
-    }
-
 }

@@ -8,12 +8,19 @@ public class Review {
     @PrimaryKey
     private int id;
 
+    private String parentTitle;
     private String review;
     private int score;
 
-    public Review(String review, int score) {
+    public Review(String parentTitle, String review, int score) {
+        this.parentTitle = parentTitle;
         this.review = review;
         this.score = score;
+    }
+
+
+    public String getParentTitle() {
+        return parentTitle;
     }
 
     public int getId() {
@@ -26,6 +33,10 @@ public class Review {
 
     public int getScore() {
         return score;
+    }
+
+    public void setParentTitle(String parentTitle) {
+        this.parentTitle = parentTitle;
     }
 
     public void setReview(String review) {

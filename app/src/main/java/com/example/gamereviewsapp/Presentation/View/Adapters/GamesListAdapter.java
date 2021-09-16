@@ -16,6 +16,7 @@ import com.example.gamereviewsapp.databinding.GameItemBinding;
 import java.util.List;
 
 public class GamesListAdapter extends RecyclerView.Adapter<GamesListAdapter.GameViewHolder> {
+
     private List<Game> games;
 
     public GamesListAdapter(List<Game> games) {
@@ -37,7 +38,6 @@ public class GamesListAdapter extends RecyclerView.Adapter<GamesListAdapter.Game
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.addReviewFragment);
-//                ((MainActivity)getData()).hideBottomNavigationVisibility();
             }
         });
     }

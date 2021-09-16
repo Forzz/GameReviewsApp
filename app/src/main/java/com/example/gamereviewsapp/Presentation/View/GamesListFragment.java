@@ -33,16 +33,10 @@ public class GamesListFragment extends Fragment {
     private GamesListViewModel gamesListVM;
     private FragmentGamesListBinding binding;
 
-    public GamesListFragment() {
-    }
+    public GamesListFragment() {}
 
     public static GamesListFragment newInstance() {
         return new GamesListFragment();
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
     }
 
     @Override
