@@ -6,7 +6,9 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
 import android.os.Bundle;
+import android.view.View;
 
+import com.example.gamereviewsapp.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,4 +22,13 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
     }
+
+    public void hideBottomNavigationVisibility() {
+//        bottomNavigationView.setVisibility(View.GONE);
+    }
+
+    public void showBottomNavigationVisibility() {
+//        bottomNavigationView.setVisibility(View.VISIBLE);
+    }
+
 }
