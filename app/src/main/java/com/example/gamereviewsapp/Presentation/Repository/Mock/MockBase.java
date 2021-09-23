@@ -52,11 +52,15 @@ public class MockBase implements RepositoryTasks {
 
     @Override
     public <T extends Review> void addReview(T review) {
+        reviewsList.add(review);
 
+        reviews.setValue(reviewsList);
     }
 
     @Override
     public <T extends Review> void deleteReview(T review) {
+        reviewsList.remove(review);
 
+        reviews.setValue(reviewsList);
     }
 }

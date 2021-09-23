@@ -7,7 +7,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,6 +42,21 @@ public class ReviewsFragment extends Fragment {
 
         binding = FragmentReviewsBinding.inflate(getLayoutInflater(), container, false);
         binding.reviewPreviewsRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder,
+                                  @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                int position = viewHolder.getAdapterPosition();
+                reviewPreviewVM.deleteReview(((ReviewsPreviewAdapter)
+                        binding.reviewPreviewsRecycler.getAdapter()).getReviews().get(position));
+            }
+        }).attachToRecyclerView(binding.reviewPreviewsRecycler);
 
         return binding.getRoot();
     }
