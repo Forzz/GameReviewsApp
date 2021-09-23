@@ -4,13 +4,18 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.gamereviewsapp.Domain.Model.Review;
-import com.example.gamereviewsapp.Presentation.Repository.Mock.MockReviews;
+import com.example.gamereviewsapp.Presentation.Repository.Mock.MockBase;
+import com.example.gamereviewsapp.Presentation.Repository.Repository;
 
 import java.util.List;
 
 public class ReviewPreviewViewModel extends ViewModel {
 
     public LiveData<List<Review>> getReviewsList() {
-        return new MockReviews().getReviews();
+        return Repository.getRepository().getAllReviews();
+    }
+
+    public void deleteReview(Review review) {
+        Repository.getRepository().deleteReview(review);
     }
 }

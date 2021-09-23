@@ -1,5 +1,6 @@
 package com.example.gamereviewsapp.Presentation.View.Adapters;
 
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,11 +35,10 @@ public class GamesListAdapter extends RecyclerView.Adapter<GamesListAdapter.Game
         holder.binding.gameItemDescription.setText(games.get(position).getDescription());
         holder.binding.criticsScore.setText(games.get(position).getCriticsScore() + " / 100");
         holder.binding.usersScore.setText(games.get(position).getUsersScore() + " / 10");
-        holder.binding.gameItemAddReviewButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.addReviewFragment);
-            }
+        holder.binding.gameItemAddReviewButton.setOnClickListener(view -> {
+            Bundle bundle = new Bundle();
+            bundle.putString("gameText", holder.binding.gameItemTitle.getText().toString());
+            Navigation.findNavController(view).navigate(R.id.addReviewFragment, bundle);
         });
     }
 

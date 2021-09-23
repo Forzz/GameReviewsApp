@@ -18,6 +18,9 @@ public class Review {
         this.score = score;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getParentTitle() {
         return parentTitle;
