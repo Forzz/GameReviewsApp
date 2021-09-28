@@ -1,13 +1,16 @@
 package com.example.gamereviewsapp.Presentation.View.Adapters;
 
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gamereviewsapp.Domain.Model.Review;
 import com.example.gamereviewsapp.Presentation.ViewModel.ReviewPreviewViewModel;
+import com.example.gamereviewsapp.R;
 import com.example.gamereviewsapp.databinding.ReviewPreviewItemBinding;
 
 import java.util.List;
@@ -33,9 +36,9 @@ public class ReviewsPreviewAdapter extends RecyclerView.Adapter<ReviewsPreviewAd
         holder.binding.reviewPreviewItemTitle.setText(reviews.get(position).getParentTitle());
         holder.binding.reviewPreviewItemScore.setText(reviews.get(position).getScore() + " / 10");
 
-//        holder.binding.deleteImageView.setOnClickListener(view -> {
-//            reviewPreviewVM.deleteReview((holder.binding.).getReviews().get(position));
-//        });
+        holder.itemView.setOnClickListener(view -> {
+            Navigation.findNavController(view).navigate(R.id.reviewDetailFragment);
+        });
     }
 
     @Override

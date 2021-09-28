@@ -1,5 +1,8 @@
 package com.example.gamereviewsapp.Presentation.ViewModel;
 
+import android.app.DownloadManager;
+import android.app.Service;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
@@ -17,5 +20,9 @@ public class ReviewPreviewViewModel extends ViewModel {
 
     public void deleteReview(Review review) {
         Repository.getRepository().deleteReview(review);
+    }
+
+    public void downloadImage(String gameTitle) {
+        DownloadManager dm;
     }
 }

@@ -27,5 +27,18 @@
         android:id="@+id/reviewsFragment"
         android:name="com.example.gamereviewsapp.Presentation.View.ReviewsFragment"
         android:label="fragment_reviews"
-        tools:layout="@layout/fragment_reviews" />
+        tools:layout="@layout/fragment_reviews" >
+        <action
+            android:id="@+id/action_reviewsFragment_to_reviewDetailFragment"
+            app:destination="@id/reviewDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reviewDetailFragment"
+        android:name="com.example.gamereviewsapp.Presentation.View.ReviewDetailFragment"
+        android:label="fragment_review_detail"
+        tools:layout="@layout/fragment_review_detail" >
+        <action
+            android:id="@+id/action_reviewDetailFragment_to_reviewsFragment"
+            app:destination="@id/reviewsFragment" />
+    </fragment>
 </navigation>
