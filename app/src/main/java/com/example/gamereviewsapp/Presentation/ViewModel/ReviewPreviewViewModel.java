@@ -21,8 +21,4 @@ public class ReviewPreviewViewModel extends ViewModel {
     public void deleteReview(Review review) {
         Repository.getRepository().deleteReview(review);
     }
-
-    public void downloadImage(String gameTitle) {
-        DownloadManager dm;
-    }
 }

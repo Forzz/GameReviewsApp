@@ -18,6 +18,8 @@ import com.example.gamereviewsapp.R;
 import com.example.gamereviewsapp.databinding.FragmentAddReviewBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.io.IOException;
+
 public class AddReviewFragment extends Fragment {
 
     private AddReviewViewModel addReviewVM;

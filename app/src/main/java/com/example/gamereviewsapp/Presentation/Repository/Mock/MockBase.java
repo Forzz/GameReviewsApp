@@ -23,8 +23,8 @@ public class MockBase implements RepositoryTasks {
     public MockBase() {
         reviewsList = new ArrayList<>();
 
-        Review review1 = new Review("Deathloop", "Good game", 7);
-        Review review2 = new Review("The Witcher 3: Wild Hunt", "One of the best", 9);
+        Review review1 = new Review("Deathloop", "Good game", 7, "file:///data/user/0/com.example.gamereviewsapp/app_Images/Deathloop.jpg");
+        Review review2 = new Review("The Witcher 3: Wild Hunt", "One of the best", 9, "file:///data/user/0/com.example.gamereviewsapp/app_Images/TheWitcher3WildHunt.jpg");
 
         reviewsList.add(review1);
         reviewsList.add(review2);
