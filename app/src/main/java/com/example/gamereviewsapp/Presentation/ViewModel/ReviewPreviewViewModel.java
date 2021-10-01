@@ -1,5 +1,8 @@
 package com.example.gamereviewsapp.Presentation.ViewModel;
 
+import android.app.DownloadManager;
+import android.app.Service;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 

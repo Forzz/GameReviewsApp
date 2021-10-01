@@ -5,17 +5,19 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "review_table")
 public class Review {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private int id;
 
     private String parentTitle;
     private String review;
     private int score;
+    private String imgUri;
 
-    public Review(String parentTitle, String review, int score) {
+    public Review(String parentTitle, String review, int score, String imgUri) {
         this.parentTitle = parentTitle;
         this.review = review;
         this.score = score;
+        this.imgUri = imgUri;
     }
 
     public void setId(int id) {
@@ -38,6 +40,10 @@ public class Review {
         return score;
     }
 
+    public String getImgUri() {
+        return imgUri;
+    }
+
     public void setParentTitle(String parentTitle) {
         this.parentTitle = parentTitle;
     }
@@ -48,5 +54,9 @@ public class Review {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    public void setImgUri(String imgUri) {
+        this.imgUri = imgUri;
     }
 }
