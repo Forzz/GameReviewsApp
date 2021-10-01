@@ -14,7 +14,6 @@ import com.example.gamereviewsapp.Domain.Model.Review;
 import com.example.gamereviewsapp.Presentation.ViewModel.ReviewPreviewViewModel;
 import com.example.gamereviewsapp.R;
 import com.example.gamereviewsapp.databinding.ReviewPreviewItemBinding;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,7 +48,7 @@ public class ReviewsPreviewAdapter extends RecyclerView.Adapter<ReviewsPreviewAd
         holder.itemView.setOnClickListener(view -> {
             Bundle bundle = new Bundle();
             bundle.putStringArray("reviewData", reviewData);
-            Navigation.findNavController(view).navigate(R.id.reviewDetailFragment);
+            Navigation.findNavController(view).navigate(R.id.reviewDetailFragment, bundle);
         });
     }
 
