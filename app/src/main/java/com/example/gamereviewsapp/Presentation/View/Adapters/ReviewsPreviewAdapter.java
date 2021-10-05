@@ -1,9 +1,7 @@
 package com.example.gamereviewsapp.Presentation.View.Adapters;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -14,10 +12,10 @@ import com.example.gamereviewsapp.Domain.Model.Review;
 import com.example.gamereviewsapp.Presentation.ViewModel.ReviewPreviewViewModel;
 import com.example.gamereviewsapp.R;
 import com.example.gamereviewsapp.databinding.ReviewPreviewItemBinding;
-import java.util.ArrayList;
+
 import java.util.List;
 
-public class ReviewsPreviewAdapter extends RecyclerView.Adapter<ReviewsPreviewAdapter.ReviewPreviewViewHolder>{
+public class ReviewsPreviewAdapter extends RecyclerView.Adapter<ReviewsPreviewAdapter.ReviewPreviewViewHolder> {
 
     private List<Review> reviews;
     private ReviewPreviewViewModel reviewPreviewVM;
@@ -27,7 +25,7 @@ public class ReviewsPreviewAdapter extends RecyclerView.Adapter<ReviewsPreviewAd
     }
 
     @Override
-    public ReviewPreviewViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ReviewPreviewViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ReviewPreviewItemBinding rbinding = ReviewPreviewItemBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
         return new ReviewPreviewViewHolder(rbinding);
     }

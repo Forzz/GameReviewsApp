@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Your Review"
+            android:hint="@string/add_review_text_hint"
             android:inputType="textPersonName" />
 
         <EditText
@@ -23,13 +23,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Score"
+            android:hint="@string/add_review_score_hint"
             android:inputType="numberDecimal" />
 
         <Button
             android:id="@+id/buttonApply"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Apply" />
+            android:text="@string/add_review_button" />
     </LinearLayout>
 </FrameLayout>
