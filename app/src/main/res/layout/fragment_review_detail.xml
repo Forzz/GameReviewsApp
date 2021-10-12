@@ -6,41 +6,56 @@
     android:layout_height="match_parent"
     tools:context=".Presentation.View.ReviewDetailFragment">
 
-    <LinearLayout
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="5dp"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/reviewDetailTitle"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/reviewDetailImage"
-            android:layout_width="270dp"
-            android:layout_height="350dp"
-            android:layout_gravity="center"
-            android:scaleType="fitXY"
-            android:src="@android:mipmap/sym_def_app_icon" />
+            <TextView
+                android:id="@+id/reviewDetailTitle"
+                style="@style/TitleTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                android:textAlignment="center" />
 
-        <TextView
-            android:id="@+id/reviewDetailText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
+            <ImageView
+                android:id="@+id/reviewDetailImage"
+                android:layout_width="270dp"
+                android:layout_height="350dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:contentDescription="@string/poster_of_game_content_description"
+                android:scaleType="fitXY"
+                android:src="@android:mipmap/sym_def_app_icon" />
 
-        <TextView
-            android:id="@+id/reviewDetailScore"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
-    </LinearLayout>
+            <TextView
+                android:id="@+id/reviewDetailText"
+                style="@style/MainTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/reviewDetailScore"
+                style="@style/MainTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="80dp"
+                android:textAlignment="center"
+                android:textSize="46sp" />
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

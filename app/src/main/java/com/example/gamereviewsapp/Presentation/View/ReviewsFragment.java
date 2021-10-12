@@ -5,7 +5,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -16,12 +15,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.gamereviewsapp.Domain.Model.Review;
-import com.example.gamereviewsapp.Presentation.View.Adapters.GamesListAdapter;
 import com.example.gamereviewsapp.Presentation.View.Adapters.ReviewsPreviewAdapter;
 import com.example.gamereviewsapp.Presentation.ViewModel.ReviewPreviewViewModel;
-import com.example.gamereviewsapp.R;
 import com.example.gamereviewsapp.databinding.FragmentReviewsBinding;
-import com.example.gamereviewsapp.databinding.ReviewPreviewItemBinding;
 
 import java.util.List;
 
@@ -30,14 +26,15 @@ public class ReviewsFragment extends Fragment {
     private ReviewPreviewViewModel reviewPreviewVM;
     private FragmentReviewsBinding binding;
 
-    public ReviewsFragment() {}
+    public ReviewsFragment() {
+    }
 
     public static ReviewsFragment newInstance() {
         return new ReviewsFragment();
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         binding = FragmentReviewsBinding.inflate(getLayoutInflater(), container, false);
@@ -67,8 +64,7 @@ public class ReviewsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         reviewPreviewVM = new ViewModelProvider(this).get(ReviewPreviewViewModel.class);
-        reviewPreviewVM.getReviewsList().observe(getViewLifecycleOwner(), (List<Review> reviewList) -> {
-            binding.reviewPreviewsRecycler.setAdapter(new ReviewsPreviewAdapter(reviewList));
-        });
+        reviewPreviewVM.getReviewsList().observe(getViewLifecycleOwner(), (List<Review> reviewList) ->
+                binding.reviewPreviewsRecycler.setAdapter(new ReviewsPreviewAdapter(reviewList)));
     }
 }

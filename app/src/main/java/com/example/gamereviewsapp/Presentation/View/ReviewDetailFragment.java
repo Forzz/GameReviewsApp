@@ -1,6 +1,5 @@
 package com.example.gamereviewsapp.Presentation.View;
 
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,7 +14,6 @@ import android.view.ViewGroup;
 import com.example.gamereviewsapp.Presentation.ViewModel.ReviewDetailViewModel;
 import com.example.gamereviewsapp.R;
 import com.example.gamereviewsapp.databinding.FragmentReviewDetailBinding;
-import com.example.gamereviewsapp.databinding.GameItemBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.io.FileNotFoundException;
@@ -30,7 +28,7 @@ public class ReviewDetailFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         rdViewModel = new ViewModelProvider(this).get(ReviewDetailViewModel.class);
@@ -47,7 +45,6 @@ public class ReviewDetailFragment extends Fragment {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-
 
         BottomNavigationView navBar = getActivity().findViewById(R.id.bottomNavigationView);
         navBar.setVisibility(View.GONE);

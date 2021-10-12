@@ -2,7 +2,6 @@ package com.example.gamereviewsapp.Presentation.View.Adapters;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -10,7 +9,6 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gamereviewsapp.Domain.Model.Game;
-import com.example.gamereviewsapp.MainActivity;
 import com.example.gamereviewsapp.R;
 import com.example.gamereviewsapp.databinding.GameItemBinding;
 
@@ -24,7 +22,8 @@ public class GamesListAdapter extends RecyclerView.Adapter<GamesListAdapter.Game
         this.games = games;
     }
 
-    public GameViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    @NonNull
+    public GameViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         GameItemBinding binding = GameItemBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
         return new GameViewHolder(binding);
     }
@@ -35,6 +34,7 @@ public class GamesListAdapter extends RecyclerView.Adapter<GamesListAdapter.Game
         holder.binding.gameItemDescription.setText(games.get(position).getDescription());
         holder.binding.criticsScore.setText(games.get(position).getCriticsScore() + " / 100");
         holder.binding.usersScore.setText(games.get(position).getUsersScore() + " / 10");
+
         holder.binding.gameItemAddReviewButton.setOnClickListener(view -> {
             Bundle bundle = new Bundle();
             bundle.putString("gameText", holder.binding.gameItemTitle.getText().toString());

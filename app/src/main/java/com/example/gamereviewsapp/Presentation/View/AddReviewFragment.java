@@ -6,7 +6,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,15 +17,13 @@ import com.example.gamereviewsapp.R;
 import com.example.gamereviewsapp.databinding.FragmentAddReviewBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.io.IOException;
-
 public class AddReviewFragment extends Fragment {
 
     private AddReviewViewModel addReviewVM;
     private FragmentAddReviewBinding binding;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         String gameTitle = getArguments().getString("gameText");
@@ -37,12 +34,12 @@ public class AddReviewFragment extends Fragment {
         binding = FragmentAddReviewBinding.inflate(getLayoutInflater(), container, false);
 
         binding.buttonApply.setOnClickListener((View view) -> {
-                if (!binding.editTextReview.getText().toString().isEmpty() && !binding.editTextScore.getText().toString().isEmpty()) {
-                    addReviewVM.addReview(gameTitle, binding.editTextReview.getText().toString(), Integer.parseInt(binding.editTextScore.getText().toString()));
-                    getParentFragmentManager().popBackStack();
-                } else {
-                    Toast.makeText(getContext(), "Fill all the fields", Toast.LENGTH_SHORT).show();
-                }
+            if (!binding.editTextReview.getText().toString().isEmpty() && !binding.editTextScore.getText().toString().isEmpty()) {
+                addReviewVM.addReview(gameTitle, binding.editTextReview.getText().toString(), Integer.parseInt(binding.editTextScore.getText().toString()));
+                getParentFragmentManager().popBackStack();
+            } else {
+                Toast.makeText(getContext(), "Fill all the fields", Toast.LENGTH_SHORT).show();
+            }
         });
 
         return binding.getRoot();

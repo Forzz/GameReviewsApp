@@ -11,16 +11,16 @@
 
         <TextView
             android:id="@+id/gameItemTitle"
+            style="@style/TitleTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:padding="10dp"
-            android:textAlignment="center"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            android:textAlignment="center" />
 
         <TextView
             android:id="@+id/gameItemDescription"
+            style="@style/MainTextStyle"
             android:layout_width="match_parent"
             android:layout_height="128dp"
             android:layout_gravity="center"
@@ -41,22 +41,22 @@
 
                 <TextView
                     android:id="@+id/criticsTitle"
+                    style="@style/MainTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:padding="5dp"
-                    android:text="Critics"
-                    android:textAlignment="center"
-                    android:textSize="20sp" />
+                    android:text="@string/game_item_critics"
+                    android:textAlignment="center" />
 
                 <TextView
                     android:id="@+id/criticsScore"
+                    style="@style/MainTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:padding="5dp"
-                    android:textAlignment="center"
-                    android:textSize="20sp" />
+                    android:textAlignment="center" />
             </LinearLayout>
 
             <LinearLayout
@@ -68,22 +68,22 @@
 
                 <TextView
                     android:id="@+id/usersTitle"
+                    style="@style/MainTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:padding="5dp"
-                    android:text="Users"
-                    android:textAlignment="center"
-                    android:textSize="20sp" />
+                    android:text="@string/game_item_users"
+                    android:textAlignment="center" />
 
                 <TextView
                     android:id="@+id/usersScore"
+                    style="@style/MainTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:padding="5dp"
-                    android:textAlignment="center"
-                    android:textSize="20sp" />
+                    android:textAlignment="center" />
             </LinearLayout>
         </LinearLayout>
 
@@ -93,7 +93,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:padding="5dp"
-            android:text="Add Review"
+            android:text="@string/game_item_button"
             android:textAlignment="center" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>
