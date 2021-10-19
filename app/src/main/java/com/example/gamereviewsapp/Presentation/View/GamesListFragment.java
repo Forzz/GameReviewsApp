@@ -5,25 +5,17 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.gamereviewsapp.Domain.Model.Game;
 import com.example.gamereviewsapp.Presentation.View.Adapters.GamesListAdapter;
 import com.example.gamereviewsapp.Presentation.ViewModel.GamesListViewModel;
-import com.example.gamereviewsapp.R;
 import com.example.gamereviewsapp.databinding.FragmentGamesListBinding;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.List;
 
@@ -33,19 +25,19 @@ public class GamesListFragment extends Fragment {
     private GamesListViewModel gamesListVM;
     private FragmentGamesListBinding binding;
 
-    public GamesListFragment() {}
+    public GamesListFragment() {
+    }
 
     public static GamesListFragment newInstance() {
         return new GamesListFragment();
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         binding = FragmentGamesListBinding.inflate(getLayoutInflater(), container, false);
         binding.gamesRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
-
 
         return binding.getRoot();
     }

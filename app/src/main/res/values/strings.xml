@@ -2,4 +2,11 @@
     <string name="app_name">GameReviewsApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_review_text_hint">Your Review</string>
+    <string name="add_review_score_hint">Score</string>
+    <string name="add_review_button">Apply</string>
+    <string name="game_item_critics">Critics</string>
+    <string name="game_item_users">Users</string>
+    <string name="game_item_button">Add Review</string>
+    <string name="poster_of_game_content_description">PosterOfGame</string>
 </resources>

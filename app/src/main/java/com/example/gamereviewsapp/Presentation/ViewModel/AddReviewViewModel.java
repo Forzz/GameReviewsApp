@@ -1,30 +1,24 @@
 package com.example.gamereviewsapp.Presentation.ViewModel;
 
 import android.app.Application;
-import android.content.Context;
 import android.content.ContextWrapper;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Environment;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
-import androidx.lifecycle.ViewModel;
 
 import com.example.gamereviewsapp.Domain.Model.Review;
 import com.example.gamereviewsapp.Presentation.Repository.Repository;
 
-import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 
 public class AddReviewViewModel extends AndroidViewModel {
 
@@ -35,7 +29,6 @@ public class AddReviewViewModel extends AndroidViewModel {
     public void addReview(String gameTitle, String reviewText, int score) {
 
         String newTitle = gameTitle.replaceAll("[\\s, :]", "");
-
         try {
             downloadImage(gameTitle);
         } catch (IOException e) {
@@ -43,8 +36,9 @@ public class AddReviewViewModel extends AndroidViewModel {
         }
         ContextWrapper wrapper = new ContextWrapper(getApplication().getApplicationContext());
         File file = wrapper.getDir("Images", ContextWrapper.MODE_PRIVATE);
-        file = new File(file, newTitle +".jpg");
+        file = new File(file, newTitle + ".jpg");
         String imgUri = Uri.fromFile(new File(String.valueOf(Uri.parse(file.getAbsolutePath())))).toString();
+
         Review review = new Review(gameTitle, reviewText, score, imgUri);
 
         Repository.getRepository().addReview(review);
@@ -58,8 +52,10 @@ public class AddReviewViewModel extends AndroidViewModel {
 
     public void downloadImage(String gameTitle) throws IOException {
         try {
+            String unformattedUrl = "https://storage.yandexcloud.net/learning-bucket/GameReviewsAppImages/%s.jpg";
+
             String newTitle = gameTitle.replaceAll("[\\s, :]", "");
-            String urlString = String.format("https://storage.yandexcloud.net/learning-bucket/GameReviewsAppImages/%s.jpg", newTitle);
+            String urlString = String.format(unformattedUrl, newTitle);
 
             new DownloadTask(newTitle).execute(urlString);
 
@@ -77,7 +73,6 @@ public class AddReviewViewModel extends AndroidViewModel {
         }
 
         protected Bitmap doInBackground(String... urlString) {
-
             try {
                 java.net.URL url = new java.net.URL(urlString[0]);
                 HttpURLConnection connection = (HttpURLConnection) url
@@ -89,7 +84,6 @@ public class AddReviewViewModel extends AndroidViewModel {
 
                 input.close();
                 return myBitmap;
-
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -104,22 +98,20 @@ public class AddReviewViewModel extends AndroidViewModel {
         }
     }
 
-    Uri saveImageToInternalStorage(Bitmap bitmap, String title) {
+    void saveImageToInternalStorage(Bitmap bitmap, String title) {
 
         ContextWrapper wrapper = new ContextWrapper(getApplication().getApplicationContext());
         File file = wrapper.getDir("Images", ContextWrapper.MODE_PRIVATE);
-        file = new File(file, title +".jpg");
-        try{
-            OutputStream stream = null;
+        file = new File(file, title + ".jpg");
+        try {
+            OutputStream stream;
             stream = new FileOutputStream(file);
-            bitmap.compress(Bitmap.CompressFormat.JPEG,100,stream);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
             stream.flush();
             stream.close();
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Uri savedImageURI = Uri.parse(file.getAbsolutePath());
-        return savedImageURI;
     }
 }
