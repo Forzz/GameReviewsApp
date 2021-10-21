@@ -33,12 +33,12 @@ public class MockBase implements RepositoryTasks {
 
         gamesList = new ArrayList<>();
 
-        Game game1 = new Game(1, "Deathloop", "In Deathloop, the player takes on the role of Colt, an assassin stuck in a time loop who has been tasked to take out eight targets called Visionaries across the island before midnight.", 88, 4.7);
-        Game game2 = new Game(2, "The Witcher 3: Wild Hunt", "An action role-playing game with a third-person perspective. Players control Geralt of Rivia, a monster slayer known as a Witcher.", 92, 9.2);
-        Game game3 = new Game(3, "Heavy Rain", "It's a 2010 interactive drama action-adventure video game developed by Quantic Dream. The game features four protagonists involved with the mystery of the Origami Killer, a serial murderer who uses extended periods of rainfall to drown his victims.", 78, 7.9);
-        gamesList.add(game1);
-        gamesList.add(game2);
-        gamesList.add(game3);
+//        Game game1 = new Game(1, "Deathloop", "In Deathloop, the player takes on the role of Colt, an assassin stuck in a time loop who has been tasked to take out eight targets called Visionaries across the island before midnight.", 88, 4.7);
+//        Game game2 = new Game(2, "The Witcher 3: Wild Hunt", "An action role-playing game with a third-person perspective. Players control Geralt of Rivia, a monster slayer known as a Witcher.", 92, 9.2);
+//        Game game3 = new Game(3, "Heavy Rain", "It's a 2010 interactive drama action-adventure video game developed by Quantic Dream. The game features four protagonists involved with the mystery of the Origami Killer, a serial murderer who uses extended periods of rainfall to drown his victims.", 78, 7.9);
+//        gamesList.add(game1);
+//        gamesList.add(game2);
+//        gamesList.add(game3);
 
         games = new MutableLiveData<>(gamesList);
     }

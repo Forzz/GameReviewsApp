@@ -1,17 +1,19 @@
 package com.example.gamereviewsapp.Domain.Model;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
+
 public class Game {
 
     final private int id;
     private String title;
-    private String description;
+//    private Bitmap previewImage;
     int criticsScore;
     double usersScore;
 
-    public Game(int id, String title, String description, int criticsScore, double usersScore) {
+    public Game(int id, String title, int criticsScore, double usersScore) {
         this.id = id;
         this.title = title;
-        this.description = description;
         this.criticsScore = criticsScore;
         this.usersScore = usersScore;
     }
@@ -24,10 +26,6 @@ public class Game {
         return title;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
     public int getCriticsScore() {
         return criticsScore;
     }
@@ -38,10 +36,6 @@ public class Game {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public void setCriticsScore(int criticsScore) {

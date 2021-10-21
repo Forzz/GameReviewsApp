@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <LinearLayout
         android:id="@+id/gameItemLinearLayout"
         android:layout_width="363dp"
-        android:layout_height="323dp"
+        android:layout_height="234dp"
         android:orientation="vertical">
 
         <TextView
@@ -18,13 +19,12 @@
             android:padding="10dp"
             android:textAlignment="center" />
 
-        <TextView
-            android:id="@+id/gameItemDescription"
-            style="@style/MainTextStyle"
-            android:layout_width="match_parent"
-            android:layout_height="128dp"
-            android:layout_gravity="center"
-            android:padding="10dp" />
+        <!--        <ImageView-->
+        <!--            android:id="@+id/gameImage"-->
+        <!--            android:layout_width="250dp"-->
+        <!--            android:layout_height="100dp"-->
+        <!--            android:layout_gravity="center"-->
+        <!--            app:srcCompat="@android:mipmap/sym_def_app_icon" />-->
 
         <LinearLayout
             android:id="@+id/gameItemScoresLinearLayout"
@@ -95,5 +95,6 @@
             android:padding="5dp"
             android:text="@string/game_item_button"
             android:textAlignment="center" />
+
     </LinearLayout>
 </androidx.cardview.widget.CardView>
