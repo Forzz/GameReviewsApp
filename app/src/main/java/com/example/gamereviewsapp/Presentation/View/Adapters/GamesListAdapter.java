@@ -33,7 +33,9 @@ public class GamesListAdapter extends RecyclerView.Adapter<GamesListAdapter.Game
         holder.binding.gameItemTitle.setText(games.get(position).getTitle());
 //        holder.binding.gameImage.setImageBitmap(games.get(position).getPreviewImage());
         holder.binding.criticsScore.setText(games.get(position).getCriticsScore() + " / 100");
+
         holder.binding.usersScore.setText(games.get(position).getUsersScore() + " / 5");
+
 
         holder.binding.gameItemAddReviewButton.setOnClickListener(view -> {
             Bundle bundle = new Bundle();

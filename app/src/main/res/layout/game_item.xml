@@ -19,6 +19,7 @@
             android:padding="10dp"
             android:textAlignment="center" />
 
+
         <!--        <ImageView-->
         <!--            android:id="@+id/gameImage"-->
         <!--            android:layout_width="250dp"-->
